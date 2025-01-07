@@ -1,2 +1,2 @@
 # ats-resume-builder
-An application that will generate a ATS resume based on user inputs. This application is meant to help final year students 
+A web application designed to help users create ATS-friendly resumes. Build, customize, and download optimized resumes that pass applicant tracking systems with ease. Perfect for job seekers aiming to enhance their chances of landing interviews
