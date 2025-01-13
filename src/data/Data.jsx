@@ -1,4 +1,4 @@
-const personalDetails = [
+export const personalDetails = [
   'First Name',
   'Last Name',
   'Email',
@@ -7,18 +7,10 @@ const personalDetails = [
   'Country',
 ];
 
-const proffessionalSummary = ['Proffesional Summary'];
+export const proffessionalSummary = ['Proffesional Summary'];
 
-const workExperience = ['Work Experience'];
+export const workExperience = ['Work Experience'];
 
-const education = ['Education'];
+export const education = ['Education'];
 
-const skills = ['skills'];
-
-export default {
-  personalDetails,
-  proffessionalSummary,
-  workExperience,
-  education,
-  skills,
-};
+export const skills = ['skills'];

@@ -1,4 +1,4 @@
-import {} from '../../data/Data'
+import { personalDetails } from '../../data/Data';
 /**
  * Input field with label and textbox for user to enter input
  * @param {string} title  title of the input, i.e first name:
@@ -21,12 +21,12 @@ function InputField({ title, type, width = '900', height = '80' }) {
     </>
   );
 }
-function Section({ title, userInfo }) {
+function Section({ title, queryUserInfo }) {
   return (
     <>
       <h3>{title}</h3>
-      {userInfo.map((field) => {
-        return <InputField key={field} title={field} userInfo={} />;
+      {queryUserInfo.map((field) => {
+        return <InputField key={crypto.randomUUID()} title={field} />;
       })}
     </>
   );
@@ -36,7 +36,7 @@ export default function Form() {
     <>
       <div className="Form">
         <h1>Dashboard</h1>
-        <Section title={personalDetail} />
+        <Section title="Personal Details" queryUserInfo={personalDetails} />
       </div>
     </>
   );
