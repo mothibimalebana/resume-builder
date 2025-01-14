@@ -8,13 +8,13 @@ function InputField({ title, type, width = '900', height = '80' }) {
   return (
     <>
       <div className="inputField">
-        <label htmlFor="username">{title}: </label>
+        <label htmlFor={title + type}>{title}: </label>
         <input
+          id={title + type}
           type={type}
-          name="username"
+          name={title + type}
           width={width}
           height={height}
-          autoComplete="home city"
           required
         />
       </div>
@@ -22,12 +22,21 @@ function InputField({ title, type, width = '900', height = '80' }) {
   );
 }
 function Section({ title, queryUserInfo }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  function submitDialog() {}
   return (
     <>
-      <h3>{title}</h3>
-      {queryUserInfo.map((field) => {
-        return <InputField key={crypto.randomUUID()} title={field} />;
-      })}
+      <dialog id="Dialog" onSubmit={submitDialog} open>
+        <form action="#" id="Form" method="dialog" onSubmit={handleSubmit}>
+          <h3>{title}</h3>
+          {queryUserInfo.map((field) => {
+            return <InputField key={crypto.randomUUID()} title={field} />;
+          })}
+          <button type="submit">Submit</button>
+        </form>
+      </dialog>
     </>
   );
 }

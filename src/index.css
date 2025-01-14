@@ -12,7 +12,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+form {
+  display: flex;
+  flex-direction: column;
+}
+dialog {
+  display: flex;
+  position: none;
+  margin: 0;
+  flex-direction: column;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -27,7 +36,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
