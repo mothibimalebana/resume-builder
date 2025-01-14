@@ -22,19 +22,28 @@ function InputField({ title, type, width = '900', height = '80' }) {
   );
 }
 function Section({ title, queryUserInfo }) {
-  function handleSubmit(event) {
+  function submitDialog(event) {
+    console.log(event);
     event.preventDefault();
   }
-  function submitDialog() {}
+
   return (
     <>
       <dialog id="Dialog" onSubmit={submitDialog} open>
-        <form action="#" id="Form" method="dialog" onSubmit={handleSubmit}>
+        <form id="Form" method="dialog">
           <h3>{title}</h3>
           {queryUserInfo.map((field) => {
-            return <InputField key={crypto.randomUUID()} title={field} />;
+            return (
+              <InputField
+                key={crypto.randomUUID()}
+                type={field}
+                title={field}
+              />
+            );
           })}
-          <button type="submit">Submit</button>
+          <button formMethod="dialog" type="submit">
+            Submit
+          </button>
         </form>
       </dialog>
     </>
