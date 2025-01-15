@@ -1,3 +1,5 @@
+import { personalDetails } from '../../data/Data';
+
 //Input component generates a label and a input
 function Input({ title, width, height, required, type }) {
   return (
@@ -14,11 +16,7 @@ function Input({ title, width, height, required, type }) {
   );
 }
 
-export default function Section({
-  sectionTitle,
-  sectionContent,
-  setUserResponse,
-}) {
+export function Section({ sectionTitle, sectionContent, setUserResponse }) {
   function handleResponse(event) {
     let userResponse = [];
     const sectionLength = sectionContent.length;
@@ -49,6 +47,18 @@ export default function Section({
           <button type="submit">Submit</button>
         </form>
       </div>
+    </>
+  );
+}
+
+export default function Form({ setUserResponse }) {
+  return (
+    <>
+      <Section
+        sectionTitle="Personal Details"
+        sectionContent={personalDetails}
+        setUserResponse={setUserResponse}
+      />
     </>
   );
 }

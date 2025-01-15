@@ -1,18 +1,19 @@
 import './App.css';
-import Section from './components/form/Form';
-import { personalDetails } from './data/Data';
+import Cv from './components/cv/Cv';
+import Form from './components/form/Form';
 import { useState } from 'react';
 
 function App() {
-  const [userResponse, setUserResponse] = useState('');
-  console.log(userResponse);
+  const [personalDetails, setPersonalDetails] = useState('');
+  console.log(personalDetails);
   return (
     <>
-      <Section
-        sectionTitle="Personal Details"
-        sectionContent={personalDetails}
-        setUserResponse={setUserResponse}
-      />
+      <div className="form">
+        <Form setUserResponse={setPersonalDetails} />
+      </div>
+      <div className="cv">
+        <Cv userResponse={personalDetails} sectionTitle="Personal Details" />
+      </div>
     </>
   );
 }
