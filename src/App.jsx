@@ -1,19 +1,17 @@
 import './App.css';
-import Form from './components/form/Form';
+import Section from './components/form/Form';
 import { personalDetails } from './data/Data';
 import { useState } from 'react';
 
 function App() {
   const [userResponse, setUserResponse] = useState('');
-
-  function handleFormSubmit() {
-    console.log('reached destination');
-  }
+  console.log(userResponse);
   return (
     <>
-      <Form
-        personalDetails={personalDetails}
-        handleFormSubmit={handleFormSubmit}
+      <Section
+        sectionTitle="Personal Details"
+        sectionContent={personalDetails}
+        setUserResponse={setUserResponse}
       />
     </>
   );

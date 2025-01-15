@@ -1,6 +1,3 @@
-import { personalDetails } from '../../data/Data.jsx';
-import { useState } from 'react';
-
 //Input component generates a label and a input
 function Input({ title, width, height, required, type }) {
   return (
@@ -17,41 +14,40 @@ function Input({ title, width, height, required, type }) {
   );
 }
 
-export function Section({ sectionTitle, sectionContent, handleSubmit }) {
+export default function Section({
+  sectionTitle,
+  sectionContent,
+  setUserResponse,
+}) {
+  function handleResponse(event) {
+    let userResponse = [];
+    const sectionLength = sectionContent.length;
+    for (let i = 0; i < sectionLength; i++) {
+      userResponse.push(event.target[i].value);
+    }
+    setUserResponse(userResponse);
+    event.preventDefault();
+  }
+
   return (
     <>
-      <h3>{sectionTitle}</h3>
       <div>
-        <form action="#" onSubmit={handleSubmit}>
-          {/* personal details secion */}
-          {sectionContent.map((inputElem) => {
+        <h3>{sectionTitle}</h3>
+        <form action="#" onSubmit={handleResponse}>
+          {sectionContent.map((sectionItem) => {
             return (
               <Input
-                title={inputElem.title}
-                width={inputElem.width}
-                height={inputElem.height}
-                required={inputElem.required}
-                type={inputElem.type}
-                key={inputElem.key}
+                title={sectionItem.title}
+                width={sectionItem.width}
+                height={sectionItem.height}
+                required={sectionItem.required}
+                type={sectionItem.type}
+                key={sectionItem.key}
               />
             );
           })}
           <button type="submit">Submit</button>
         </form>
-      </div>
-    </>
-  );
-}
-
-export default function Form({ personalDetails, handleFormSubmit }) {
-  return (
-    <>
-      <div>
-        <Section
-          sectionTitle="Personal Details"
-          sectionContent={personalDetails}
-          handleSubmit={handleFormSubmit}
-        />
       </div>
     </>
   );
