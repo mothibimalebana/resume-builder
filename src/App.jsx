@@ -1,19 +1,20 @@
 import './App.css';
 import Form from './components/form/Form';
+import { personalDetails } from './data/Data';
+import { useState } from 'react';
 
 function App() {
   const [userResponse, setUserResponse] = useState('');
-  //get response values:
-  const newUserResponse = []; //array to contain new user response
-  for (let i = 0; i < sectionContent.length; i++) {
-    newUserResponse.push(event.target[i].value);
-    event.target[i].value = '';
-    setUserResponse(newUserResponse);
-  }
 
+  function handleFormSubmit() {
+    console.log('reached destination');
+  }
   return (
     <>
-      <Form />
+      <Form
+        personalDetails={personalDetails}
+        handleFormSubmit={handleFormSubmit}
+      />
     </>
   );
 }

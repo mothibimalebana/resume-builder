@@ -17,10 +17,7 @@ function Input({ title, width, height, required, type }) {
   );
 }
 
-export function Section({ sectionTitle, sectionContent }) {
-  function handleSubmit(event) {
-    event.preventDefault(); //prevent form default behaviour
-  }
+export function Section({ sectionTitle, sectionContent, handleSubmit }) {
   return (
     <>
       <h3>{sectionTitle}</h3>
@@ -46,13 +43,14 @@ export function Section({ sectionTitle, sectionContent }) {
   );
 }
 
-export default function Form() {
+export default function Form({ personalDetails, handleFormSubmit }) {
   return (
     <>
       <div>
         <Section
           sectionTitle="Personal Details"
           sectionContent={personalDetails}
+          handleSubmit={handleFormSubmit}
         />
       </div>
     </>
