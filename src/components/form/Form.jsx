@@ -17,19 +17,10 @@ function Input({ title, width, height, required, type }) {
   );
 }
 
-function Section({ sectionTitle, sectionContent }) {
-  const [userResponse, setUserResponse] = useState('first render');
-
+export function Section({ sectionTitle, sectionContent }) {
   function handleSubmit(event) {
-    //get response values:
-    const newUserResponse = []; //array to contain new user response
-    for (let i = 0; i < sectionContent.length; i++) {
-      newUserResponse.push(event.target[i].value);
-      setUserResponse(newUserResponse);
-    }
     event.preventDefault(); //prevent form default behaviour
   }
-  console.log(userResponse);
   return (
     <>
       <h3>{sectionTitle}</h3>
