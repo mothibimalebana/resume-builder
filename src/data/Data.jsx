@@ -24,14 +24,6 @@ export const personalDetails = [
     key: crypto.randomUUID(),
   },
   {
-    title: 'City',
-    height: 180,
-    width: 900,
-    type: 'text',
-    required: true,
-    key: crypto.randomUUID(),
-  },
-  {
     title: 'Phone',
     height: 180,
     width: 900,
@@ -40,7 +32,15 @@ export const personalDetails = [
     key: crypto.randomUUID(),
   },
   {
-    title: 'Country',
+    title: 'City',
+    height: 180,
+    width: 900,
+    type: 'text',
+    required: true,
+    key: crypto.randomUUID(),
+  },
+  {
+    title: 'Province',
     height: 180,
     width: 900,
     type: 'text',
