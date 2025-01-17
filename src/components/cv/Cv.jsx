@@ -3,7 +3,9 @@ export default function Cv({ sectionTitle, userResponse }) {
     <>
       <div>
         <h3>{sectionTitle}</h3>
-        <div className="personalInfo"></div>
+        <div className="personalInfo">
+          {userResponse.firstName + ' ' + userResponse.secondName}
+        </div>
       </div>
     </>
   );

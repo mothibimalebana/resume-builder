@@ -47,6 +47,14 @@ export const personalDetails = [
     required: true,
     key: crypto.randomUUID(),
   },
+  {
+    title: 'Role',
+    height: 180,
+    width: 900,
+    type: 'text',
+    required: true,
+    key: crypto.randomUUID(),
+  },
 ];
 
 export const proffessionalSummary = ['Proffesional Summary'];

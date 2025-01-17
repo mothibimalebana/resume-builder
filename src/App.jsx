@@ -11,8 +11,9 @@ function App() {
     phone: '+27713346084',
     city: 'Townsville',
     province: 'Gauteng',
+    role: 'Developer',
   });
-  console.log(personalDetails);
+
   const [education, setEducation] = useState('');
   return (
     <>
