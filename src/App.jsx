@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
-    firstName: 'Your first name',
-    secondName: 'Your surnmame',
+    'First Name': 'Your first name',
+    'Last Name': 'Your surnmame',
     email: 'youremail@gmail.com',
     phone: '+27713346084',
     city: 'Townsville',
@@ -14,14 +14,14 @@ function App() {
     role: 'Developer',
   });
 
-  const [education, setEducation] = useState('');
+  // const [education, setEducation] = useState('');
   return (
     <>
       <div className="form">
         <Form setUserResponse={setPersonalDetails} />
       </div>
       <div className="cv">
-        <Cv userResponse={personalDetails} sectionTitle="Personal Details" />
+        <Cv userResponse={personalDetails} />
       </div>
     </>
   );

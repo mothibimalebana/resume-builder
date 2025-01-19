@@ -18,10 +18,10 @@ function Input({ title, width, height, required, type }) {
 
 export function Section({ sectionTitle, sectionContent, setUserResponse }) {
   function handleResponse(event) {
-    let userResponse = [];
-    const sectionLength = sectionContent.length;
-    for (let i = 0; i < sectionLength; i++) {
-      userResponse.push(event.target[i].value);
+    let userResponse = {};
+    for (let key in sectionContent) {
+      // console.log(sectionContent[key].title, event.target[key].value);
+      userResponse[sectionContent[key].title] = event.target[key].value;
     }
     setUserResponse(userResponse);
     event.preventDefault();
