@@ -4,13 +4,9 @@ import Form from './components/form/Form';
 import { useState } from 'react';
 
 function App() {
-  const [personalDetails, setPersonalDetails] = useState({
+  const [personalInfo, setpersonalInfo] = useState({
     'First Name': 'Your first name',
     'Last Name': 'Your surnmame',
-    email: 'youremail@gmail.com',
-    phone: '+27713346084',
-    city: 'Townsville',
-    province: 'Gauteng',
     role: 'Developer',
   });
 
@@ -18,10 +14,10 @@ function App() {
   return (
     <>
       <div className="form">
-        <Form setUserResponse={setPersonalDetails} />
+        <Form setUserResponse={setpersonalInfo} />
       </div>
       <div className="cv">
-        <Cv userResponse={personalDetails} />
+        <Cv userResponse={personalInfo} />
       </div>
     </>
   );

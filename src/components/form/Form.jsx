@@ -1,4 +1,4 @@
-import { personalDetails } from '../../data/Data';
+import { personalInfo } from '../../data/Data';
 
 //Input component generates a label and a input
 function Input({ title, width, height, required, type }) {
@@ -56,7 +56,7 @@ export default function Form({ setUserResponse }) {
     <>
       <Section
         sectionTitle="Personal Details"
-        sectionContent={personalDetails}
+        sectionContent={personalInfo}
         setUserResponse={setUserResponse}
       />
     </>

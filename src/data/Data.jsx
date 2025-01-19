@@ -1,4 +1,4 @@
-export const personalDetails = [
+export const personalInfo = [
   {
     title: 'First Name',
     height: 180,
@@ -15,6 +15,16 @@ export const personalDetails = [
     required: true,
     key: crypto.randomUUID(),
   },
+  {
+    title: 'Role',
+    height: 180,
+    width: 900,
+    type: 'text',
+    required: true,
+    key: crypto.randomUUID(),
+  },
+];
+export const personalDetails = [
   {
     title: 'Email',
     height: 180,
@@ -41,14 +51,6 @@ export const personalDetails = [
   },
   {
     title: 'Province',
-    height: 180,
-    width: 900,
-    type: 'text',
-    required: true,
-    key: crypto.randomUUID(),
-  },
-  {
-    title: 'Role',
     height: 180,
     width: 900,
     type: 'text',
