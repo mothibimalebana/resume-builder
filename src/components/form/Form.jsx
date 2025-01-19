@@ -18,7 +18,7 @@ function Input({ title, width, height, required, type }) {
 
 export function Section({ sectionTitle, sectionContent, setUserResponse }) {
   function handleResponse(event) {
-    let userResponse = {};
+    let userResponse = [];
     for (let key in sectionContent) {
       // console.log(sectionContent[key].title, event.target[key].value);
       userResponse[sectionContent[key].title] = event.target[key].value;

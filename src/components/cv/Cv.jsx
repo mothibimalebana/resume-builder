@@ -1,9 +1,19 @@
 function SectionCv({ sectionTitle, userResponse }) {
+  function getResponseContent() {
+    let content = [];
+    for (let key in userResponse) {
+      let item = userResponse[key];
+      content.push(
+        <p key={key} id={key}>
+          {item}
+        </p>
+      );
+    }
+    return content;
+  }
   return (
     <>
-      <div>
-        <div className={sectionTitle}>{}</div>
-      </div>
+      <div className={sectionTitle}>{getResponseContent()}</div>
     </>
   );
 }
@@ -11,12 +21,7 @@ export default function Cv({ userResponse }) {
   console.log(userResponse);
   return (
     <>
-      <div>
-        <SectionCv
-          sectionTitle="Personal Details"
-          userResponse={userResponse}
-        ></SectionCv>
-      </div>
+      <SectionCv sectionTitle="Personal Details" userResponse={userResponse} />
     </>
   );
 }
