@@ -1,4 +1,5 @@
 export default function Cv({ sectionTitle, userResponse }) {
+  console.log(userResponse);
   return (
     <>
       <div>
